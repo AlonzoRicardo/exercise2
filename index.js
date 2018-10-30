@@ -21,7 +21,7 @@ app.post('/message', test(), (req, res) => {
     let { destination, body } = req.body
 
     if (destination.length < 100 && body.length < 100) {
-        axios.post('http://localhost:3000/message', { destination, body })
+        axios.post('http://messageapp:3000/message', { destination, body })
             .then(() => {
                 res.status(200).send('Succesful');
             })
