@@ -1,0 +1,18 @@
+// The messageApp service is easy to use.
+//
+// Examples
+// --------
+//      
+//     
+//    
+//
+//     
+//     
+
+interface messageApp {
+    // checks if object values are of type string  
+    isObject(destination string, body string) object
+    
+    // Subtracts b from a and returns the result
+    subtract(a float, b float) float
+}

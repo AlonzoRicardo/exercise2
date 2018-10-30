@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "barrister": "^0.1.8",
     "express": "^4.16.4"
   }
 }
