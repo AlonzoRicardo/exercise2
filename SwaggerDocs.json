@@ -1,0 +1,69 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is a test swagger for cabify's bootcamp - exercise 2",
+    "version" : "1.0.0",
+    "title" : "MessageApp API",
+    "contact" : {
+      "email" : "alonzoricardo6@gmail.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags" : [ {
+    "name" : "admins",
+    "description" : "Secured Admin-only calls"
+  }, {
+    "name" : "developers",
+    "description" : "Operations available to regular developers"
+  } ],
+  "paths" : {
+    "/message" : {
+      "post" : {
+        "tags" : [ "admins" ],
+        "summary" : "sends a message",
+        "operationId" : "addInventory",
+        "description" : "sends message to end point",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "message",
+          "description" : "message to add",
+          "schema" : {
+            "$ref" : "#/definitions/message"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "message succesfully sent"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "message" : {
+      "type" : "object",
+      "required" : [ "destination", "body" ],
+      "properties" : {
+        "destination" : {
+          "type" : "string",
+          "example" : "Johny222"
+        },
+        "body" : {
+          "type" : "string",
+          "example" : "Hello from Johny"
+        }
+      }
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/rickalon/ricardoalonzo-api/1.0.0",
+  "schemes" : [ "https" ]
+}
